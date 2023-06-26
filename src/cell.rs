@@ -26,9 +26,11 @@ impl Cell for Spreadsheet {
                         match r.r {
                             Some(rn) => {
                                 if rn == row {
-                                    for c in &r.c {
-                                        if c.r == format!("{}{}", column_title, row.to_string()) {
-                                            return Ok(self.get_value_from(&c));
+                                    if let Some(cells) = &r.c {
+                                        for c in cells {
+                                            if c.r == format!("{}{}", column_title, row.to_string()) {
+                                                return Ok(self.get_value_from(&c));
+                                            }
                                         }
                                     }
                                 }

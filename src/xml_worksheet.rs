@@ -169,7 +169,7 @@ pub struct CTRow {
     #[serde(rename = "ph")]
     pub ph: Option<bool>,
     #[serde(rename = "c")]
-    pub c: Vec<CTCell>,
+    pub c: Option<Vec<CTCell>>,
     #[serde(rename = "extLst")]
     pub ext_lst: Option<String>,
 }
@@ -212,11 +212,11 @@ pub struct CTSheetPr {
     #[serde(rename = "enableFormatConditionsCalculation")]
     pub enable_format_conditions_calculation: Option<bool>,
     #[serde(rename = "tabColor")]
-    pub tab_color: Vec<CTColor>,
+    pub tab_color: Option<Vec<CTColor>>,
     #[serde(rename = "outlinePr")]
-    pub outline_pr: Vec<CTOutlinePr>,
+    pub outline_pr: Option<Vec<CTOutlinePr>>,
     #[serde(rename = "pageSetUpPr")]
-    pub page_set_up_pr: Vec<CTPageSetUpPr>,
+    pub page_set_up_pr: Option<Vec<CTPageSetUpPr>>,
 }
 
 /// CTColor is a common mapping used for both the fgColor and bgColor elements.
@@ -316,7 +316,7 @@ pub struct CTAutoFilter {
     #[serde(rename = "ref")]
     pub ref_attr: Option<String>,
     #[serde(rename = "filterColumn")]
-    pub filter_column: Vec<CTFilterColumn>,
+    pub filter_column: Option<Vec<CTFilterColumn>>,
     #[serde(rename = "sortState")]
     pub sort_state: Option<CTSortState>,
 }
@@ -443,7 +443,7 @@ pub struct CTFilters {
     #[serde(rename = "filter")]
     pub filter: Vec<CTFilter>,
     #[serde(rename = "dateGroupItem")]
-    pub date_group_item: Vec<CTDateGroupItem>,
+    pub date_group_item: Option<Vec<CTDateGroupItem>>,
 }
 
 /// CTFilter directly maps the filter element. This element expresses a filter
